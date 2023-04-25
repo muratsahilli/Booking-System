@@ -1,0 +1,112 @@
+﻿@model WebApp.Models.UserRegisterViewModel
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt OL- DSİ Randevu</title>
+    <link rel="stylesheet" href="~/voler/assets/css/bootstrap.css">
+
+    <link rel="shortcut icon" href="~/mazer/assets/images/dsi_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/voler/assets/css/app.css">
+</head>
+
+<body>
+    <div id="auth">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 mx-auto">
+                    <div class="card pt-4">
+                        <div class="card-body">
+                            <div class="text-center mb-5">
+                                <img src="~/images/dsi_logo.png" height="80" class='mb-4'>
+                                <h3>Üye Ol</h3>
+                                <p>Kayıt olmak için lütfen formu eksiksiz doldurun.</p>
+                            </div>
+                            <form method="post">
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-column">İSMİNİZ</label>
+                                            <input type="text" id="Name" class="form-control" name="Name">
+                                            <span asp-validation-for="Name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="last-name-column">Soy İSMİNİZ</label>
+                                            <input type="text" id="SurName" class="form-control" name="SurName">
+                                             <span asp-validation-for="SurName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="username-column">KULLANICI ADINIZ</label>
+                                            <input type="text" id="UserName" class="form-control" name="UserName">
+                                             <span asp-validation-for="UserName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="email-id-column">MAİL ADRESİNİZ</label>
+                                            <input type="email" id="Email" class="form-control" name="Email">
+                                             <span asp-validation-for="Email"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group position-relative has-icon-left">
+                                        <div class="clearfix">
+                                            <label for="password">ŞİFRE</label>
+                                        </div>
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control" id="Password" name="Password">
+                                             <span asp-validation-for="Password"></span>
+                                            <div class="form-control-icon">
+                                                <i data-feather="lock"></i>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group position-relative has-icon-left">
+                                        <div class="clearfix">
+                                            <label for="password">ŞİFRE TEKRARI</label>
+                                        </div>
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                                            <span asp-validation-for="ConfirmPassword"></span>
+                                            <div class="form-control-icon">
+                                                <i data-feather="lock"></i>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <a href="Login">Hesabınız var mı? Oturum Açın</a>
+                                <div class="clearfix">
+                                    <button class="btn btn-primary float-end">Oluştur</button>
+                                </div>
+                            </form>
+                                                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <partial name="~/Views/Partials/Partial_Footer.cshtml" />
+    <script src="~/voler/assets/js/feather-icons/feather.min.js"></script>
+    <script src="~/voler/assets/js/app.js"></script>
+    <script src="~/voler/assets/js/main.js"></script>
+</body>
+
+</html>

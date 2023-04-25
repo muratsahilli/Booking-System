@@ -1,0 +1,122 @@
+﻿@model Entity.Concrete.Arama
+@{
+    ViewData["Title"] = "AramaDuzenle";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>Arama Düzenle</h1>
+
+<section id="basic-vertical-layouts">
+    <div class="row match-height">
+
+        <div class="col-md-12 col-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <form class="form form-vertical" method="post" >
+                            <div class="form-body">
+                                <div class="row">
+                                    
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="first-name-icon" >İsim</label>
+                                            <div class="position-relative">
+                                                <input type="text" asp-for="İsim" class="form-control"
+                                                       id="first-name-icon" name="İsim" required>
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-person"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="mobile-id-icon">Telefon</label>
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control" asp-for="Telefon" id="mobile-id-icon" required name="Telefon">
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-phone"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden">
+                                        <div class="form-group has-icon-left">
+                                            <div class="hidden">
+                                                <input type="hidden" class="hidden" asp-for="AramaId" id="mobile-id-icon">
+                                                <div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <style>
+                                            textarea {
+                                                margin-bottom: 0.7rem
+                                            }</style>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" asp-for="Konu" id="floatingTextarea" placeholder="Konu" required></textarea>
+                                            <label  for="floatingTextarea">Konu</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Saat</label>
+                                        <fieldset class="form-group">
+                                            <input type="datetime-local" min="todayT10:00" max="todayT11:00" class="form-control" asp-for="AranmaTarihi" required />
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Arayan Tipi</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-select" asp-for="ArayanTipiId" id="basicSelect" name="ArayanTipiId">
+                                                @foreach (var item in ViewBag.ArayanTipleri)
+                                                {
+                                                    <option value="@item.Value">@item.Text</option>
+                                                }
+                                            </select>
+                                        </fieldset>
+                                    </div><div class="col-12">
+                                        <label>Arama Tipi</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-select" asp-for="AramaTipiId" id="basicSelect" name="AramaTipiId">
+                                                @foreach (var item in ViewBag.AramaTipleri)
+                                                {
+                                                    <option value="@item.Value">@item.Text</option>
+                                                }
+                                            </select>
+                                        </fieldset>
+                                        
+                                    </div><div class="col-12">
+                                        <label>Kaydeden</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-select" asp-for="KaydedenId" id="basicSelect" name="KaydedenId">
+                                                @foreach (var item in ViewBag.User)
+                                                {
+                                                    <option value="@item.Value">@item.Text</option>
+                                                }
+                                            </select>
+                                        </fieldset>
+                                    </div><div class="col-12">
+                                        <label>Aranan</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-select" asp-for="ArananId" id="basicSelect" name="ArananId">
+                                                @foreach (var item in ViewBag.User)
+                                                {
+                                                    <option value="@item.Value">@item.Text</option>
+                                                }
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Değişiklikleri Kaydet</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "AddDatetime";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>AddDatetime</h1>
+
+
+@*
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+<input type="text" name="datetime" value="10/24/2020" />
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+<script>
+    $(function() {
+
+        $('input[name="datetime"]').daterangepicker({
+            "singleDatePicker": true,
+            "timePicker": true,
+            "timePicker24Hour": true,
+            "autoApply": true,
+            "linkedCalendars": false,
+            "showCustomRangeLabel": false,
+        }, function(start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+    });
+</script>
+*@
+<!-- Include Bootstrap CDN -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet">
+
+
+<!-- Include Moment.js CDN -->
+<!-- Include Bootstrap DateTimePicker CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
+      rel="stylesheet">
+
+
+<input type="text" id="datetime" name="datetime" value="">
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+</script>
+
+<script>
+    $(function() {
+        $('input[name="datetime"]').dateTimePicker({
+            selectData: "now",
+            dateFormat: "DD-MM-YYYY HH:mm",
+            locale: 'tr',
+            showTime: true,
+        });
+    });
+</script>
